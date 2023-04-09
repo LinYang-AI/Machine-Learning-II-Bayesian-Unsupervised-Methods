@@ -39,7 +39,7 @@ Unsupervised algorithms can be used on labelled data, the labels are simply igno
 
 Also knon as **Novelty detection**. It trys to find outliers in the data. An outlier can be seen as a **rare or isolated** instance that differs significantly from the remainder of the data.
 
-![1678400113342](image/UsupervisedMethod/1678400113342.png)a
+![1678400113342](image/UsupervisedMethod/1678400113342.png)
 
 #### Usages:
 
@@ -51,7 +51,7 @@ Statistical methods, density-based unsupervised methods, probabilistic methods, 
 
 ### Association Rules
 
-It trys to find relations between the features. The relations can be seen as a set of interesting rules that determine **how and why certain features are linked**.
+It trys to find relations between the features. The relations can be seen as a **set of interesting rules** that determine **how and why certain features are linked**.
 
 #### Usages
 
@@ -317,13 +317,11 @@ The lower-dimensional representation of the data is then found using classical m
 
 Thereby, LLE is sensitive to the choice of the number of nearest neighbors.
 
-
 **Use case**
 
 - image and speech recognition
 - bioinformatics
 - data visualization
-
 
 ###### t-SNE
 
@@ -334,7 +332,6 @@ The basic idea behind t-SNE is to represent each high-dimensional data point as 
 This is done by first computing a pairwise similarity measure between the data points in the high-dimensional space, typically using a Gaussian kernel. Then, for each data point, t-SNE constructs a probability distribution over the other points in the high-dimensional space, with the similarity values serving as the probabilities.
 
 t-SNE then constructs a similar probability distribution for each data point in the low-dimensional space, and aims to minimize the difference between the high-dimensional and low-dimensional distributions using the Kullback-Leibler (KL) divergence. This involves finding the optimal positions of the data points in the low-dimensional space that minimize the KL divergence, using gradient descent or other optimization algorithms.
-
 
 ###### UMAP
 
@@ -354,12 +351,9 @@ The basic steps of the UMAP algorithm are as follows:
 
 ![1678628658193](image/UsupervisedMethod/1678628658193.png)
 
-
-
 ### Clustering
 
 Clustering is a machine learning technique used to group together similar data points based on their characteristics or features. The goal of clustering is to partition a dataset into groups, or clusters, such that the data points within each cluster are similar to each other and dissimilar to data points in other clusters.
-
 
 **Use Case**
 
@@ -368,14 +362,12 @@ Clustering is a machine learning technique used to group together similar data p
 - Image and Speech Recognition
 - Natural Language Processing
 
-
 **Algorithms**:
 
 There are many different types of clustering algorithms, but they can generally be divided into two categories: hierarchical clustering and partitioning clustering.
 
 - Connectivity based clustering
 - 
-
 
 #### Connectivity Based Clustering
 
@@ -388,7 +380,6 @@ There are two main approaches:
 
 **The top-down approach works best when there are fewer, but larger clusters. The bottom-up approach works best when there are many smaller clusters.**
 
-
 To determine the similarity between data distances and distances between the clusters, linkage criteria is used as a distance metric
 
 Mostly used distance: eulicidean distence. Others: Manhattan, Minkowski and Hamming distances.
@@ -400,7 +391,6 @@ Main linkage criterias:
 - Average Linkage
 - Ward Linkage
 
-
 The **Single Linkage** is searching for the closest pair of points to merge or split two clusters.
 
 The **Complete Linkage** criteria is searching for the furthest pair of points to merge or split two clusters.
@@ -409,13 +399,11 @@ Th **Average/median Linkage** criteria is searching to minimize the average or m
 
 The **Ward Linkage** criteria is considering the union of every possible cluster pair and is trying the **minimize the residual sum of squares between them. It is based on minimizing the variance of the distances between the new clusters and their centroids.
 
-
 #### Dendrogram
 
 A dendrogram is a type of diagram used to represent the hierarchical clustering of a dataset. The dendrogram algorithm is used to construct this diagram, and it works by recursively merging pairs of clusters until a single root cluster is formed.
 
 ![1678631651066](image/UsupervisedMethod/1678631651066.png)
-
 
 One can cut the dendrogram based on the number of clusters or a threshold of similarity to create a flat clustering.
 
@@ -425,22 +413,17 @@ One can cut the dendrogram based on the number of clusters or a threshold of sim
 
 ![1678632111241](image/UsupervisedMethod/1678632111241.png)
 
-
 #### BIRCH
 
 BIRCH stands for **Balanced Iterative Reducing and Clustering using Hierachies**. It uses a **[Cluster Feature tree](./Cluster Feature tree.md)** (CF) to *incrementally* build a hirachical clustering structure.
 
 BIRCH is efficient in handling large and dynamic data sets without having to store all the data in memory. Because BIRCH constructs CF tree incrementally as data is being processed. The instances are added to the tree one at a time, and so that the tree is updated each time.
 
-
-
 ##### Pros and Cons
 
 ![1678633456041](image/UsupervisedMethod/1678633456041.png)
 
-
 #### Centroid based clustering
-
 
 Commonly used Algo.:
 
@@ -448,7 +431,6 @@ Commonly used Algo.:
 - **K-medians**: using the dedian instead of the mean
 - **K-medoids**: using an instance as centroid instead of the mean
 - **Fuzzy c-means**: instances can belong to multiple clusters
-
 
 ##### K-Means
 
@@ -459,10 +441,7 @@ Steps:
 - Initialization: initialize the centroids of k clusters
 - Iteration: based on the closest distrance between instance and centroids of clusters, assign the instance to the correct cluster of which the centroid is updated with the new instance added.
 
-
-
 K-means is sensitive to the itnitial placement of centroids.
-
 
 Few techniaues are used for determining the number of clusters:
 
@@ -470,13 +449,11 @@ Few techniaues are used for determining the number of clusters:
 - **Silthouette analysis**
 - **Calinski-Harabasez index**
 
-
 ###### Elbow Method
 
 This method determines the value of k by choosing the value at which the sum of squared distances between the instances and their respective cluster centroid to the respect of k increases with a slower rate.
 
 ![1678635101421](image/UsupervisedMethod/1678635101421.png)
-
 
 ###### Silhouette Analysis
 
@@ -501,7 +478,6 @@ This method calculates the silhouette score for each instance which measures the
   s = \frac{1}{N}\sum_i^Ns(i)
   $$
 
-
 The silhouette score ranges from -1 to 1:
 
 - a high score ($\to$ 1) indicates the data is well-matched to its own cluster
@@ -509,7 +485,6 @@ The silhouette score ranges from -1 to 1:
 - a low score ($\to$ -1) indicates that the data point is poorly matched to its own cluster.
 
 The correct number of clusters is typically chosen as the number of clusters that results in the highest average silhouette score.
-
 
 ###### Clinski Harabasz
 
@@ -524,17 +499,5 @@ S_{CH} = \frac{(N-K)B}{(K-1)\sum_{k=1}^KW_k}
 $$
 
 Where $N$ is the number of instances, $K$ is the number of clusters, $B$ is the inter-cluster variance, $W_k$ is the intra-cluster variance.
-
-
-
-
-
-
-
-
-
-
-
-
 
 here is the bottom

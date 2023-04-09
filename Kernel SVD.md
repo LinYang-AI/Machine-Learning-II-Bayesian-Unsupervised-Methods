@@ -1,6 +1,6 @@
+# Kernel SVD
 
 The mathematical derivation of kernel PCA involves several steps, including the kernel trick, eigenvalue decomposition, and the projection of the data onto the principal components.
-
 
 1. Kernel trick: The first step in kernel PCA is to apply a kernel function to the input data. The kernel function transforms the data into a higher-dimensional feature space, where it may be linearly separable. The most commonly used kernel function is the radial basis function (RBF) kernel, which is defined as follows:
    $k(x, y) = exp(-\gamma ||x-y||^2)$

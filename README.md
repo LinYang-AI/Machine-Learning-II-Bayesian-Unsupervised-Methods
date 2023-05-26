@@ -58,11 +58,11 @@ The same important features also found among the unmatched people. It is logical
 
 For example the 'attractive_o' and the 'guess_prob_liked' features, the higher the (encoded) values are the higher posibility that people find a match.
 
-![img](./image/Cluster/2_Most_Important_feature_vs_All_Cluster.png)
+![img](./image/Cluster/Important_Feature_vs_All_Cluster.png)
 
 
 Another conclusion we can subtract from the result is that the higher (encoded) 'attractive_o' value is given by the partner, the more likely this person has high score of other important features in the matching cases.
 
-![img](./image/Cluster/Intelli_Attractiveness_highestMatchRate.png)
+![img](./image/Cluster/Intelli_Attract.png)
 
 It is very clear that in the matched case, the values of the two features are prone to be in the up right coner.
